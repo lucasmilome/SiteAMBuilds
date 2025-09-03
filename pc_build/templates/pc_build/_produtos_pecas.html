@@ -1,0 +1,68 @@
+{# filepath: pc_build/templates/pc_build/_produtos_pecas.html #}
+{% load static %}
+
+<div class="produtos-search-bar">
+    <input type="text" class="input-search-produtos" placeholder="Buscar produto...">
+    <button type="button" class="btn-search-produtos">
+        <i class="fa fa-search"></i>
+    </button>
+</div>
+<section class="section">
+    <div class="produtos-wrapper" id="{{ scroll_id }}">
+        {% for produto in produtos %}
+        <div class="produto">
+            <div class="img-container">
+                {% if produto.imagem %}
+                <img class="image-produto" src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+                {% else %}
+                <img class="image-produto" src="https://placehold.co/80x80" alt="Sem imagem">
+                {% endif %}
+                {% if produto.desconto %}
+                <span class="porcentagem-desconto">-{{ produto.desconto }}% OFF</span>
+                {% endif %}
+            </div>
+            <div class="info-produto">
+                <p class="nome-produto">{{ produto.nome }}</p>
+                <a href="{{ produto.link }}" target="_blank" class="link-informacoes">Ver informações</a>
+                <div class="precos">
+                    {% if produto.preco_normal_formatado %}
+                    <span class="preco-normal">{{ produto.preco_normal_formatado }}</span>
+                    {% endif %}
+                    <span class="preco-desconto">{{ produto.preco_desconto_formatado }}</span>
+                </div>
+            </div>
+            <div class="loja-produto">
+                {% if produto.loja == "Terabyte" %}
+                <img src="{% static 'pc_build/img/terabyte.png' %}" alt="Terabyte">
+                {% elif produto.loja == "KaBuM!" %}  
+                <img src="{% static 'pc_build/img/kabum.png' %}" alt="Kabum">
+                {% elif produto.loja == "Kabum" %}  
+                <img src="{% static 'pc_build/img/kabum.png' %}" alt="Kabum">
+                {% elif produto.loja == "Pichau" %}
+                <img src="{% static 'pc_build/img/pichau.png' %}" alt="Pichau">
+                {% elif produto.loja == "Amazon" %}
+                <img src="{% static 'pc_build/img/amazon.png' %}" alt="Amazon">
+                {% elif produto.loja == "Magalu" %}
+                <img src="{% static 'pc_build/img/magalu.png' %}" alt="Magalu">
+                {% elif produto.loja == "Magazine Luiza" %}
+                <img src="{% static 'pc_build/img/magalu.png' %}" alt="Magalu">
+                {% elif produto.loja == "AliExpress" %}
+                <img src="{% static 'pc_build/img/aliexpress.png' %}" alt="Aliexpress">
+                {% elif produto.loja == "Mercado Livre" %}
+                <img src="{% static 'pc_build/img/mercado.jpg' %}" alt="Mercado Livre">
+                {% elif produto.loja == "Shopee" %}
+                <img src="{% static 'pc_build/img/shopee.png' %}" alt="Shopee">
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% if descricao %}
+<div class="descricao-peca">
+    {% if imagem %}
+    <img src="{% static imagem %}" alt="{{ titulo }}">
+    {% endif %}
+    <p>{{ descricao }}</p>
+</div>
+{% endif %}

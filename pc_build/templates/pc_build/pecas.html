@@ -1,0 +1,628 @@
+{% extends 'pc_build/base.html' %}
+{% load static %}
+
+{% block content %}
+    <nav class="nav_pecas">
+        <div class="scroll-horizontal">
+            <a href="#" class="peca_icon active" data-peca="processador"><i class="bi bi-cpu"></i><span>Processador</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="placa-mae"><i class="bi bi-motherboard"></i><span>Placa-mãe</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="memoria-ram"><i class="bi bi-memory"></i><span>Memória RAM</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="placa-video"><i class="bi bi-gpu-card"></i><span>Placa de Vídeo</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="hd-ssd"><i class="bi bi-hdd"></i><span>HD/SSD</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="fonte"><i class="bi bi-plug"></i><span>Fonte</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="gabinete"><i class="bi bi-pc"></i><span>Gabinete</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="cooler"><i class="bi bi-fan"></i><span>Cooler</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="monitor"><i class="bi bi-display"></i><span>Monitor</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="teclado"><i class="bi bi-keyboard"></i><span>Teclado</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="mouse"><i class="bi bi-mouse"></i><span>Mouse</span></a>
+            <span class="linha"></span>
+            <a href="#" class="peca_icon" data-peca="revisao"><i class="bi bi-gear"></i><span>Revisão</span></a>
+        </div>
+    </nav>
+
+    <main>
+        <div id="total-parcial" style="text-align:center; font-size:1.2em; font-weight:bold; margin: 16px 0;">
+        Total: R$ 0,00
+        </div>
+        <div id="processador" class="peca_content" style="display:block;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/processador.png' %}" alt="Processador">
+                        <p><strong>O processador</strong> é como o cérebro do computador. Ele é quem pensa e toma decisões, dizendo para os outros componentes o que fazer. Toda vez que você abre um programa, joga, assiste a um vídeo ou digita algo, o processador é quem processa essas informações rapidamente para que tudo funcione direitinho. Quanto mais rápido o processador, mais rápido o computador consegue fazer as coisas.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                    </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Processadores" produtos=processadores scroll_id="scroll-processador" %}
+                </div>
+            </div>
+        </div>
+        <div id="placa-mae" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/placa-mae.png' %}" alt="Placa-mãe">
+                        <p><strong>A placa-mãe</strong> é como a base do computador, onde tudo se conecta. Ela segura o processador, a memória, o disco e todas as outras peças, e faz com que elas consigam conversar e trabalhar juntas. Sem a placa-mãe, o computador não funcionaria, porque cada componente precisaria de um caminho próprio para enviar informações e receber energia.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Placas-mãe" produtos=placas_mae scroll_id="scroll-placa-mae" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="memoria-ram" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/memoria-ram.png' %}" alt="Memória RAM">
+                        <p><strong>A memória RAM</strong> (memória de acesso aleatório) é como a memória de curto prazo do computador. Ela guarda temporariamente os programas e arquivos que você está usando no momento, permitindo que o processador acesse essas informações rapidamente. Por exemplo, quando você abre um jogo, um vídeo ou um navegador, eles ficam armazenados na RAM enquanto você os utiliza. Quanto mais RAM o computador tiver, mais coisas ele consegue fazer ao mesmo tempo sem ficar lento, porque consegue acessar rapidamente todas as informações que estão em uso.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Memória RAM" produtos=memoria_ram scroll_id="scroll-memoria_ram" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="placa-video" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/placa-video.png' %}" alt="Placa de Vídeo">
+                        <p><strong>A placa de vídeo</strong> é o “cérebro das imagens” do computador. Ela pega os números e informações que o processador entende e transforma em imagens que vemos na tela, como fotos, vídeos, jogos e animações. Quanto mais potente, mais rápida e detalhada será a imagem, melhorando especialmente jogos e programas de design. Existem placas integradas, que já vêm no computador, e placas dedicadas, separadas e mais potentes.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Placas de Vídeo" produtos=placas_de_video scroll_id="scroll-placa-video" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="hd-ssd" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/hd-ssd.png' %}" alt="HD/SSD">
+                        <p><strong>HD/SSD</strong> ou disco rígido, é como um armário com gavetas giratórias. Dentro dele, há um disco que gira e uma “agulha” que lê ou escreve dados. Ele guarda arquivos, fotos, vídeos e programas. A vantagem é que oferece muito espaço por um preço baixo, mas é mais lento e pode estragar se sofrer impactos.
+O SSD, ou unidade de estado sólido, é como uma gaveta mágica que abre instantaneamente. Ele não tem partes móveis, guarda os mesmos arquivos que o HD, mas muito mais rápido. O computador liga rápido, os programas abrem instantaneamente e ele é mais resistente a quedas. A desvantagem é que custa mais caro e geralmente tem menos espaço.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="HD/SSD" produtos=armazenamento scroll_id="scroll-hd-ssd" %}
+                </div>
+            </div>
+        </div>
+        <div id="fonte" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/fonte.png' %}" alt="Fonte">
+                        <p><strong>A fonte</strong> é o componente responsável por fornecer energia para todas as partes do computador. Ela recebe a eletricidade da tomada e converte essa energia em tensões adequadas para cada peça interna, como a placa-mãe, processador, placa de vídeo e armazenamento. Além disso, a fonte ajuda a proteger os componentes contra oscilações de energia, evitando que queimem ou sofram danos. Em resumo, sem a fonte o computador não funciona, pois é ela quem distribui a energia de forma segura e estável.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Fontes" produtos=fontes_de_alimentacao scroll_id="scroll-fonte" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="gabinete" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/gabinete.png' %}" alt="Gabinete">
+                        <p><strong>O gabinete</strong> é a estrutura que abriga os principais componentes de um computador, como a placa-mãe, o processador, a memória RAM, a placa de vídeo, a fonte de energia e os dispositivos de armazenamento (HD ou SSD). Ele protege essas peças contra poeira e impactos, além de auxiliar na ventilação e no resfriamento para evitar o superaquecimento. Em resumo, o gabinete funciona como a “caixa” que organiza e mantém em segurança todo o hardware do computador.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Gabinetes" produtos=gabinetes scroll_id="scroll-gabinete" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="cooler" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/cooler.png' %}" alt="Cooler">
+                        <p><strong>O cooler</strong> é o componente responsável por manter a temperatura adequada das partes internas do computador. Ele dissipa o calor gerado principalmente pelo processador e pela placa de vídeo, evitando o superaquecimento que pode causar lentidão, travamentos ou até danos permanentes. Além disso, alguns modelos contam com sistemas de refrigeração mais avançados, como heatpipes e líquidos, que aumentam a eficiência. Em resumo, sem o cooler o computador não conseguiria funcionar por muito tempo, pois o excesso de calor comprometeria o desempenho e a vida útil dos componentes.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Coolers" produtos=coolers scroll_id="scroll-cooler" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="monitor" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/monitor.png' %}" alt="Monitor">
+                        <p><strong>O monitor</strong> é o componente responsável por exibir as imagens geradas pela placa de vídeo, permitindo que o usuário interaja visualmente com o computador. Ele transforma os sinais eletrônicos em elementos gráficos, como textos, vídeos, jogos e programas, sendo essencial para qualquer atividade. Existem diferentes tipos de monitores, que variam em tamanho, resolução, taxa de atualização e tecnologia de painel, cada um adequado a diferentes necessidades. Em resumo, sem o monitor não seria possível visualizar as informações do computador, tornando inviável o uso no dia a dia.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Monitores" produtos=monitores scroll_id="scroll-monitor" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="teclado" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/teclado.png' %}" alt="Teclado">
+                        <p><strong>O teclado</strong> é o componente responsável por permitir a entrada de informações no computador por meio de teclas físicas ou virtuais. Com ele, o usuário pode digitar textos, executar comandos, acessar atalhos e interagir de forma prática com o sistema. Existem diversos modelos de teclados, que variam em tamanho, formato e tecnologia, como os mecânicos, de membrana ou sem fio, cada um oferecendo uma experiência diferente. Em resumo, sem o teclado seria muito mais difícil inserir dados e se comunicar com o computador de maneira eficiente.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Teclados" produtos=teclados scroll_id="scroll-teclado" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="mouse" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao">
+                        <img src="{% static 'pc_build/img/mouse.png' %}" alt="Mouse">
+                        <p><strong>O mouse</strong> é o componente responsável por controlar o cursor na tela do computador, permitindo ao usuário interagir de forma rápida e precisa com o sistema. Ele detecta movimentos e cliques, que são traduzidos em ações como abrir programas, selecionar arquivos e navegar pela internet. Existem diversos tipos de mouse, com fio, sem fio, ópticos ou a laser, além dos modelos gamers que oferecem maior sensibilidade e botões extras. Em resumo, sem o mouse a navegação e o uso do computador se tornariam muito menos práticos e intuitivos.</p>
+                    </div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    {% include "pc_build/_produtos_pecas.html" with titulo="Mouses" produtos=mouses scroll_id="scroll-mouse" %}
+                </div>
+            </div>
+            
+        </div>
+        <div id="revisao" class="peca_content" style="display:none;">
+            <div class="categoria-flex">
+                <div class="descricao-peca">
+                    <div class="descricao-padrao"></div>
+                    <div class="detalhe-produto" style="display:none;"></div>
+                </div>
+                <div class="produtos-peca">
+                    <div id="revisao-lista"></div>
+                </div>
+                <button type="button" id="btn-finalizar-montagem">Finalizar montagem</button>
+            </div>
+        </div>
+    </main>
+        <!-- Botão fixo para avançar -->
+<button id="btn-proxima-peca-fixo" class="btn-proxima-peca-fixo" style="display:none;">Próxima peça</button>
+
+    <script>
+
+const ordemPecas = [
+    "processador","placa-mae","memoria-ram","placa-video","hd-ssd","fonte","gabinete","cooler","monitor","teclado","mouse","revisao"
+];
+let selecao = {};
+let total = 0;
+let produtoSelecionado = null;
+let pecaAtiva = "processador";
+
+// Navbar: troca de peça
+document.querySelectorAll('.peca_icon').forEach(item => {
+    item.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('.peca_icon').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        document.querySelectorAll('.peca_content').forEach(content => content.style.display = 'none');
+        const peca = item.getAttribute('data-peca');
+        pecaAtiva = peca; // <-- ATUALIZE AQUI
+        document.getElementById(peca).style.display = 'block';
+        item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        document.getElementById('btn-proxima-peca-fixo').style.display = 'none';
+        produtoSelecionado = null;
+        adicionarBotaoPular(pecaAtiva); // <-- CHAME AQUI
+    });
+});
+
+function adicionarBotaoPular(pecaId) {
+    const opcionais = ['monitor', 'teclado', 'mouse'];
+    if (!opcionais.includes(pecaId)) return;
+    const content = document.getElementById(pecaId);
+    // Remove botão antigo se existir
+    const btnAntigo = content.querySelector('.btn-pular-peca');
+    if (btnAntigo) btnAntigo.remove();
+    // Adiciona novo botão
+    const btn = document.createElement('button');
+    btn.className = 'btn-pular-peca';
+    btn.innerText = 'Pular';
+    btn.style.margin = '16px auto 0 auto';
+    btn.style.display = 'block';
+    btn.onclick = function() {
+        const btnProxima = document.getElementById('btn-proxima-peca-fixo');
+        btnProxima.style.display = 'block';
+        btnProxima.click();
+    };
+    content.appendChild(btn);
+}
+
+// Sempre que trocar de aba, adiciona o botão se for opcional
+document.querySelectorAll('.peca_icon').forEach(item => {
+    item.addEventListener('click', e => {
+        // ...código existente...
+        const peca = item.getAttribute('data-peca');
+        adicionarBotaoPular(peca);
+    });
+});
+
+// E já adiciona ao carregar a página (caso entre direto em uma opcional)
+['monitor', 'teclado', 'mouse'].forEach(adicionarBotaoPular);
+
+// Seleção e detalhe do produto
+document.querySelectorAll('.produto').forEach(produtoEl => {
+    produtoEl.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Seleção visual
+        produtoEl.parentElement.querySelectorAll('.produto').forEach(p => p.classList.remove('selecionado'));
+        produtoEl.classList.add('selecionado');
+        produtoSelecionado = produtoEl;
+
+        // Dados do produto
+        const pecaContent = produtoEl.closest('.peca_content');
+        const descricaoPadrao = pecaContent.querySelector('.descricao-padrao');
+        const detalheProduto = pecaContent.querySelector('.detalhe-produto');
+        const nome = produtoEl.querySelector('.nome-produto').innerText;
+        const preco = produtoEl.querySelector('.preco-desconto').innerText;
+        const precoNum = parseFloat(preco.replace(/[^\d,]/g, '').replace(',', '.'));
+        const lojaImg = produtoEl.querySelector('.loja-produto img')?.outerHTML || '';
+        const imagem = produtoEl.querySelector('.image-produto')?.outerHTML || '';
+        const link = produtoEl.querySelector('.link-informacoes')?.getAttribute('href') || '#';
+        const pecaId = pecaContent.id;
+        let quantidade = 1;
+
+        // Só mostra controle de quantidade para memória RAM
+        let quantidadeHTML = '';
+        if (pecaId === 'memoria-ram') {
+            quantidadeHTML = `
+                <div class="controle-quantidade" style="margin: 10px 0;">
+                    <button class="btn-quantidade" id="btn-quantidade-menos">-</button>
+                    <span id="quantidade-memoria-ram" style="margin: 0 10px;">1</span>
+                    <button class="btn-quantidade" id="btn-quantidade-mais">+</button>
+                    <span style="margin-left:8px;">un.</span>
+                </div>
+            `;
+        }
+
+        if (pecaId !== 'memoria-ram') {
+            selecao[pecaId] = { nome, preco: precoNum };
+        }
+        total = Object.values(selecao).reduce((acc, item) => acc + (item.preco || 0), 0);
+        atualizarTotalParcial();
+
+        // Mostra detalhe
+        detalheProduto.innerHTML = `
+            <div class="detalhe-produto-card-unico">
+                <div class="detalhe-img-container">${imagem}</div>
+                <div class="detalhe-info-produto">
+                    <p class="detalhe-nome-produto-unico">${nome}</p>
+                    ${quantidadeHTML}
+                    <div class="detalhe-precos">
+                        <span class="detalhe-preco-desconto" style="color: #222">${preco}</span>
+                    </div>
+                    <a href="${link}" target="_blank" class="detalhe-link-informacoes" style="margin-top:10px;">Ver na loja</a>
+                    <div class="detalhe-loja-produto">${lojaImg}</div>
+                    <button class="detalhe-btn-voltar" style="margin-top:18px;">Voltar</button>
+                </div>
+            </div>
+        `;
+        descricaoPadrao.style.display = 'none';
+        detalheProduto.style.display = 'block';
+
+        // Controle de quantidade para memória RAM
+        if (pecaId === 'memoria-ram') {
+            let quantidade = 1;
+            const spanQuantidade = detalheProduto.querySelector('#quantidade-memoria-ram');
+            const btnMais = detalheProduto.querySelector('#btn-quantidade-mais');
+            const btnMenos = detalheProduto.querySelector('#btn-quantidade-menos');
+            const spanPreco = detalheProduto.querySelector('.detalhe-preco-desconto');
+
+            // Atualiza seleção inicial
+            selecao[pecaId] = { nome, preco: precoNum * quantidade, quantidade, precoUnitario: precoNum };
+
+            function atualizarPreco() {
+                // Atualiza o preço exibido
+                spanPreco.innerText = precoNum.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                if (quantidade > 1) {
+                    spanPreco.innerText = (precoNum * quantidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                }
+            }
+
+            btnMais.onclick = () => {
+                quantidade++;
+                spanQuantidade.innerText = quantidade;
+                selecao[pecaId] = { nome, preco: precoNum * quantidade, quantidade, precoUnitario: precoNum };
+                total = Object.values(selecao).reduce((acc, item) => acc + (item.preco || 0), 0);
+                atualizarPreco();
+                atualizarTotalParcial();
+            };
+            btnMenos.onclick = () => {
+                if (quantidade > 1) {
+                    quantidade--;
+                    spanQuantidade.innerText = quantidade;
+                    selecao[pecaId] = { nome, preco: precoNum * quantidade, quantidade, precoUnitario: precoNum };
+                    total = Object.values(selecao).reduce((acc, item) => acc + (item.preco || 0), 0);
+                    atualizarPreco();
+                    atualizarTotalParcial();
+                }
+            };
+
+            // Atualiza o preço na primeira exibição
+            atualizarPreco();
+        } else {
+            selecao[pecaId] = { nome, preco: precoNum };
+        }
+
+        // Voltar
+        detalheProduto.querySelector('.detalhe-btn-voltar').onclick = () => {
+            detalheProduto.style.display = 'none';
+            descricaoPadrao.style.display = 'block';
+        };
+
+        // Mostra botão fixo
+        document.getElementById('btn-proxima-peca-fixo').style.display = 'block';
+    });
+});
+
+// Botão fixo: avançar para próxima peça
+document.getElementById('btn-proxima-peca-fixo').onclick = function() {
+    const pecaContent = Array.from(document.querySelectorAll('.peca_content')).find(
+        el => el.style.display === 'block'
+    );
+    const pecaId = pecaContent.id;
+    const obrigatorios = [
+        'processador', 'placa-mae', 'memoria-ram', 'hd-ssd', 'fonte', 'gabinete', 'cooler'
+    ];
+    if (obrigatorios.includes(pecaId) && (!selecao[pecaId] || !selecao[pecaId].nome)) {
+        alert('Selecione uma opção para continuar!');
+        return;
+    }
+    // ...restante do código de avanço (igual já está)
+    let atual = ordemPecas.indexOf(pecaId);
+    if (atual < ordemPecas.length - 1) {
+        document.getElementById(ordemPecas[atual]).style.display = 'none';
+        document.getElementById(ordemPecas[atual+1]).style.display = 'block';
+        document.querySelectorAll('.peca_icon').forEach(function(i) {
+            i.classList.remove('active');
+            if(i.getAttribute('data-peca') === ordemPecas[atual+1]) i.classList.add('active');
+        });
+        this.style.display = 'none';
+        produtoSelecionado = null;
+        const proximaContent = document.getElementById(ordemPecas[atual+1]);
+        if (proximaContent) {
+            const detalhe = proximaContent.querySelector('.detalhe-produto');
+            const descPadrao = proximaContent.querySelector('.descricao-padrao');
+            if (detalhe && descPadrao) {
+                detalhe.style.display = 'none';
+                descPadrao.style.display = 'block';
+            }
+        }
+        document.querySelector('.peca_icon.active').scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        if (ordemPecas[atual+1] === 'revisao') atualizarRevisao();
+    }
+};
+
+// Envio do formulário final
+function enviarMontagemParaServidor(selecao, total) {
+    const form = document.getElementById('form-montagem');
+    const campos = {
+        processador: 'processador',
+        placa_mae: 'placa-mae',
+        memoria_ram: 'memoria-ram',
+        placa_video: 'placa-video',
+        hd_ssd: 'hd-ssd',
+        fonte: 'fonte',
+        gabinete: 'gabinete',
+        cooler: 'cooler',
+        monitor: 'monitor',
+        teclado: 'teclado',
+        mouse: 'mouse'
+    };
+    Object.entries(campos).forEach(([campo, id]) => {
+        form.elements[campo].value = selecao[id]?.nome || '';
+    });
+    form.elements['total'].value = total.toFixed(2);
+    form.elements['memoria_ram'].value = selecao['memoria-ram']?.id || '';
+    form.elements['quantidade_memoria_ram'].value = selecao['memoria-ram']?.quantidade || 1;
+    form.submit();
+}
+document.getElementById('btn-finalizar-montagem').onclick = () => {
+    document.getElementById('form-montagem').submit();
+};
+
+// Função para atualizar a revisão
+function atualizarRevisao() {
+    const revisaoLista = document.getElementById('revisao-lista');
+    let html = '<div class="revisao-lista">';
+    let totalRevisao = 0;
+    Object.entries(selecao).forEach(([peca, dados]) => {
+        if (dados && dados.nome) {
+            // Tenta pegar a imagem do produto selecionado
+            let img = '';
+            // Procura o produto selecionado na lista de produtos exibidos
+            const produtoEl = document.querySelector(`#${peca} .produto.selecionado .image-produto`);
+            if (produtoEl) {
+                img = `<img src="${produtoEl.src}" alt="${dados.nome}">`;
+            }
+            html += `<div class="revisao-item">
+                ${img ? `<div class="revisao-img">${img}</div>` : ''}
+                <div class="revisao-info">
+                    <div class="revisao-nome">${dados.nome}
+                        ${peca === 'memoria-ram' && dados.quantidade ? `
+    <span class="revisao-quantidade">
+        <button class="btn-quantidade" id="rev-quantidade-menos">-</button>
+        <span id="rev-quantidade-memoria-ram">${dados.quantidade}</span>
+        <button class="btn-quantidade" id="rev-quantidade-mais">+</button>
+        un.
+    </span>
+` : ''}
+                    </div>
+                </div>
+                <div class="revisao-preco">
+                    R$ ${(dados.preco || 0).toLocaleString('pt-BR', {minimumFractionDigits:2})}
+                </div>
+            </div>`;
+            totalRevisao += dados.preco || 0;
+        }
+    });
+    html += `</div><div class="revisao-total">Total: R$ ${totalRevisao.toLocaleString('pt-BR', {minimumFractionDigits:2})}</div>`;
+    revisaoLista.innerHTML = html;
+
+    // --------- ADICIONE ESTE BLOCO AQUI -----------
+    document.querySelectorAll('.revisao-item').forEach(item => {
+        item.onclick = function() {
+            const nome = this.querySelector('.revisao-nome').innerText.trim();
+            // Procura o produto correspondente na lista de produtos exibidos
+            let produtoEl = null;
+            document.querySelectorAll('.produto').forEach(prod => {
+                if (prod.querySelector('.nome-produto')?.innerText.trim() === nome) {
+                    produtoEl = prod;
+                }
+            });
+            if (produtoEl) {
+                // Monta o detalhe igual nas outras etapas
+                const detalheProduto = document.querySelector('#revisao .detalhe-produto');
+                const descricaoPadrao = document.querySelector('#revisao .descricao-padrao');
+                const preco = produtoEl.querySelector('.preco-desconto').innerText;
+                const lojaImg = produtoEl.querySelector('.loja-produto img')?.outerHTML || '';
+                const imagem = produtoEl.querySelector('.image-produto')?.outerHTML || '';
+                const link = produtoEl.querySelector('.link-informacoes')?.getAttribute('href') || '#';
+                const nomeProduto = produtoEl.querySelector('.nome-produto').innerText;
+                detalheProduto.innerHTML = `
+                    <div class="detalhe-produto-card-unico">
+                        <div class="detalhe-img-container">${imagem}</div>
+                        <div class="detalhe-info-produto">
+                            <p class="detalhe-nome-produto-unico">${nomeProduto}</p>
+                            <div class="detalhe-precos">
+                                <span class="detalhe-preco-desconto" style="color: #222">${preco}</span>
+                            </div>
+                            <a href="${link}" target="_blank" class="detalhe-link-informacoes" style="margin-top:10px;">Ver na loja</a>
+                            <div class="detalhe-loja-produto">${lojaImg}</div>
+                            <button class="detalhe-btn-voltar" style="margin-top:18px;">Voltar</button>
+                        </div>
+                    </div>
+                `;
+                if (descricaoPadrao) descricaoPadrao.style.display = 'none';
+                detalheProduto.style.display = 'block';
+
+                // Botão voltar
+                detalheProduto.querySelector('.detalhe-btn-voltar').onclick = () => {
+                    detalheProduto.style.display = 'none';
+                    if (descricaoPadrao) descricaoPadrao.style.display = 'block';
+                };
+            }
+        };
+    });
+    // -----------------------------------------------
+}
+
+// Sempre que entrar na aba revisão:
+document.querySelector('[data-peca="revisao"]').addEventListener('click', atualizarRevisao);
+// E também ao avançar para revisão pelo botão fixo:
+
+// IDs das peças opcionais
+const opcionais = ['monitor', 'teclado', 'mouse'];
+opcionais.forEach(id => {
+    const content = document.getElementById(id);
+    if (content && !content.querySelector('.btn-pular-peca')) {
+        const btn = document.createElement('button');
+        btn.className = 'btn-pular-peca';
+        btn.innerText = 'Pular';
+        btn.style.margin = '16px auto 0 auto';
+        btn.style.display = 'block';
+        btn.onclick = function() {
+            // Mostra o botão se estiver oculto
+            const btnProxima = document.getElementById('btn-proxima-peca-fixo');
+            btnProxima.style.display = 'block';
+            btnProxima.click();
+        };
+        content.appendChild(btn);
+    }
+});
+
+
+// Atualiza total parcial
+function atualizarTotalParcial() {
+    document.getElementById('total-parcial').innerText =
+        'Total: R$ ' + total.toLocaleString('pt-BR', {minimumFractionDigits:2});
+}
+
+// Chame essa função sempre que atualizar o total:
+total = Object.values(selecao).reduce((acc, item) => acc + (item.preco || 0), 0);
+atualizarTotalParcial();
+
+function selecionarProduto(tipo, produtoId) {
+    document.getElementById('input-' + tipo).value = produtoId;
+}
+
+// Exemplo de uso ao clicar em um produto:
+document.querySelectorAll('.produto').forEach(function(produto) {
+    produto.addEventListener('click', function() {
+        const tipo = this.dataset.tipo; // Ex: 'processador'
+        const produtoId = this.dataset.id; // Ex: '15'
+        selecionarProduto(tipo, produtoId);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn-finalizar-montagem').onclick = function() {
+        document.getElementById('form-montagem').submit();
+    };
+});
+function selecionarProduto(tipo, produtoId) {
+    document.getElementById('input-' + tipo).value = produtoId;
+}
+
+// Exemplo de uso ao clicar em um produto:
+document.querySelectorAll('.produto').forEach(function(produto) {
+    produto.addEventListener('click', function() {
+        const tipo = this.dataset.tipo; // Ex: 'processador'
+        const produtoId = this.dataset.id; // Ex: '15'
+        selecionarProduto(tipo, produtoId);
+    });
+});
+</script>
+
+<form id="form-montagem" method="POST" action="{% url 'salvar_montagem' %}" style="display:none;">
+    {% csrf_token %}
+    <input type="hidden" name="processador" id="input-processador">
+    <input type="hidden" name="placa_mae" id="input-placa_mae">
+    <input type="hidden" name="memoria_ram" id="input-memoria_ram">
+    <input type="hidden" name="placa_video" id="input-placa_video">
+    <input type="hidden" name="hd_ssd" id="input-hd_ssd">
+    <input type="hidden" name="fonte" id="input-fonte">
+    <input type="hidden" name="gabinete" id="input-gabinete">
+    <input type="hidden" name="cooler" id="input-cooler">
+    <input type="hidden" name="monitor" id="input-monitor">
+    <input type="hidden" name="teclado" id="input-teclado">
+    <input type="hidden" name="mouse" id="input-mouse">
+    <input type="hidden" name="total" id="input-total">
+    <input type="hidden" name="modelo" value="{{ modelo }}">
+</form>
+{% endblock %}

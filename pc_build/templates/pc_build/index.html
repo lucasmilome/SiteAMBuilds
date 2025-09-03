@@ -1,0 +1,45 @@
+{% extends 'pc_build/base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="pc-flex">
+        <!-- Card 1 -->
+        <div class="pc-card">
+            <img src="{% static 'pc_build/img/customizado.png' %}" class="pc-card-img" alt="Modelo Customizado">
+            <div class="pc-card-title">MODELO CUSTOMIZADO</div>
+            <a href="{% url 'pc_build_pecas' %}?modelo=customizado" class="pc-card-btn">MONTAR</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="pc-card">
+            <img src="{% static 'pc_build/img/escritorio.png' %}" class="pc-card-img" alt="PC Escritório">
+            <div class="pc-card-title">PC ESCRITÓRIO</div>
+            <a href="{% url 'pc_build_pecas' %}?modelo=escritorio" class="pc-card-btn">MONTAR</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="pc-card">
+            <img src="{% static 'pc_build/img/pc_entrada.png' %}" class="pc-card-img" alt="PC Gamer de Entrada">
+            <div class="pc-card-title">PC GAMER DE ENTRADA</div>
+            <a href="{% url 'pc_build_pecas' %}?modelo=pc_entrada" class="pc-card-btn">MONTAR</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="pc-card">
+            <img src="{% static 'pc_build/img/pc_avancado.png' %}" class="pc-card-img" alt="PC Gamer Avançado">
+            <div class="pc-card-title">PC GAMER AVANÇADO</div>
+            <a href="{% url 'pc_build_pecas' %}?modelo=pc_avancado" class="pc-card-btn">MONTAR</a>
+        </div>
+        <!-- Card 5 -->
+        <div class="pc-card">
+            <img src="{% static 'pc_build/img/zero.png' %}" class="pc-card-img" alt="Monte do Zero">
+            <div class="pc-card-title">MONTE DO ZERO</div>
+            <a href="{% url 'pc_build_pecas' %}?modelo=zero" class="pc-card-btn">MONTAR</a>
+        </div>
+        <!-- Card 6 -->
+        <div class="pc-card">
+            <img src="{% static 'pc_build/img/servidor.png' %}" class="pc-card-img" alt="Servidores e Workstations">
+            <div class="pc-card-title">SERVIDORES E WORKSTATIONS</div>
+            <a href="{% url 'pc_build_pecas' %}?modelo=servidor" class="pc-card-btn">MONTAR</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

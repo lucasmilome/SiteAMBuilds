@@ -1,0 +1,126 @@
+{% extends 'pc_build/base.html' %}
+{% load static %}
+
+{% block title %}Detalhes da Montagem{% endblock %}
+
+{% block content %}
+<div class="detalhes-montagem-container">
+    <h2>Detalhes da Montagem</h2>
+    <div class="revisao-lista">
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/processador.png' %}" alt="Processador">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Processador AMD Ryzen 7 5700G</div>
+                <div class="revisao-preco">R$ 1.057,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/placa-mae.png' %}" alt="Placa-mãe">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">ASUS Prime B450M-GAMING</div>
+                <div class="revisao-preco">R$ 549,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/memoria-ram.png' %}" alt="Memória RAM">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Kingston Fury 8GB DDR4 2666MHz <span class="revisao-quantidade">2 un.</span></div>
+                <div class="revisao-preco">R$ 169,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/placa-video.png' %}" alt="Placa de Vídeo">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">NVIDIA GeForce GTX 1660 Super</div>
+                <div class="revisao-preco">R$ 1.299,00</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/hd-ssd.png' %}" alt="HD/SSD">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">SSD Kingston 480GB</div>
+                <div class="revisao-preco">R$ 299,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/fonte.png' %}" alt="Fonte">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Fonte Corsair 550W</div>
+                <div class="revisao-preco">R$ 349,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/gabinete.png' %}" alt="Gabinete">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Gabinete Cooler Master MB511</div>
+                <div class="revisao-preco">R$ 279,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/cooler.png' %}" alt="Cooler">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Water Cooler Pichau Aqua 360X</div>
+                <div class="revisao-preco">R$ 334,92</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/monitor.png' %}" alt="Monitor">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Monitor LG 24" Full HD</div>
+                <div class="revisao-preco">R$ 799,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/teclado.png' %}" alt="Teclado">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Teclado Redragon Kumara</div>
+                <div class="revisao-preco">R$ 199,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+        <div class="revisao-item">
+            <div class="revisao-img">
+                <img src="{% static 'pc_build/img/mouse.png' %}" alt="Mouse">
+            </div>
+            <div class="revisao-info">
+                <div class="revisao-nome">Mouse Logitech G203</div>
+                <div class="revisao-preco">R$ 129,90</div>
+                <a href="#" target="_blank" style="color: #222;">Ver na loja</a>
+            </div>
+        </div>
+    </div>
+    <div class="revisao-total" style="margin-top:32px;">
+        Total: R$ 5.439,82
+    </div>
+    <a href="{% url 'meus_pcs' %}" class="btn-voltar-montagem">Voltar para meus PCs</a>
+</div>
+{% endblock %}

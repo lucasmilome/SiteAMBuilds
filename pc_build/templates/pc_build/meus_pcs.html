@@ -1,0 +1,28 @@
+{% extends 'pc_build/base.html' %}
+{% load static %}
+{% block title %}Meus PCs{% endblock %}
+
+{% block content %}
+<div class="meus-pcs-container">
+    <h2>Meus PCs Montados</h2>
+    {% if montagens %}
+        <div class="meus-pcs-lista">
+            {% for montagem in montagens %}
+                <div class="meus-pc-card">
+                    <div class="meus-pc-img-wrap">
+                        <img src="{% static 'pc_build/img/' %}{{ montagem.modelo }}.png" alt="{{ montagem.nome|default:'PC' }}" class="meus-pc-img">
+                    </div>
+                    <div class="meus-pc-info">
+                        <h3 class="meus-pc-nome">{{ montagem.nome|default:"PC sem nome" }}</h3>
+                        <a href="{% url 'montagem_detalhes' montagem.id %}" class="meus-pc-detalhes-btn">Ver detalhes</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="meus-pcs-vazio">
+            Você ainda não montou nenhum PC.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
